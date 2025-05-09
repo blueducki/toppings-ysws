@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Sacramento', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.background-welcome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #F5E0B5, #FF9E80);
+  z-index: -1;
+}
+
+
+.background-boba {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://png.pngtree.com/background/20231222/original/pngtree-d-illustration-of-an-outdoor-coffee-shop-with-architectural-design-featuring-picture-image_6925912.jpg') no-repeat center center/cover;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.background-icecream {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://pbs.twimg.com/media/FkwsfXEXkAAecyz.jpg:large') no-repeat center center/cover;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.content {
+  text-align: center;
+  padding: 40px 20px;
+  color: #333;
+}
+
+.shop-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: antiquewhite;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.item {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  width: 220px;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: scale(1.08);
+}
+
+.item h2 {
+  margin: 15px 0 5px;
+  font-size: 1.5rem;
+}
+
+.item p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.boba-btn, .ice-cream-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  font-style: italic;
+  font-size: 1.8rem;
+  transition: background-color 0.3s ease;
+}
+
+.boba-btn {
+  background-color: #f9c74f;
+}
+
+.ice-cream-btn {
+  background-color: #65aedd;
+}
+
+.boba-btn:hover {
+  background-color: #f8b40c;
+}
+
+.ice-cream-btn:hover {
+  background-color: #468fa1;
+}
+
+.reviews {
+  list-style-type: none;
+  margin-top: 30px;
+  padding: 0;
+}
+
+.reviews li {
+  font-size: 2rem;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.mango {
+  color: #f9c74f;
+}
+
+.strawberry {
+  color: #f94144;
+}
+
+.lychee {
+  color: #90be6d;
+}
+
+.thai {
+  color: #f3722c;
+}
+
+.home {
+  color:black
+}
+
+.home-boba {
+  color:white
+}
+
+.sun-image {
+  margin-top: 20px;
+  max-width: 100px;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 500px) {
+  .background-welcome {
+    background: linear-gradient(to bottom right, #b3ffb2, #72ffe5);
+  }
+}
