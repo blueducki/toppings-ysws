@@ -21,7 +21,6 @@ body, html {
   z-index: -1;
 }
 
-
 .background-boba {
   position: fixed;
   top: 0;
@@ -50,66 +49,14 @@ body, html {
   color: #333;
 }
 
-.shop-title {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: antiquewhite;
-}
-
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-
-.item {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  padding: 20px;
-  width: 220px;
-  backdrop-filter: blur(4px);
-  transition: transform 0.3s ease;
-}
-
-.item img {
-  width: 100%;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.item:hover img {
-  transform: scale(1.08);
-}
-
-.item h2 {
-  margin: 15px 0 5px;
-  font-size: 1.5rem;
-}
-
-.item p {
-  font-size: 1.1rem;
-  font-weight: bold;
+.welcome-title {
+  font-size: 4rem;
+  margin-bottom: 10px;
   color: #fff;
-  text-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
-footer {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  font-size: 1rem;
-}
-
-footer a {
-  color: #333;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+.buttons {
+  margin: 30px 0;
 }
 
 .boba-btn, .ice-cream-btn {
@@ -153,30 +100,6 @@ footer a:hover {
   font-style: italic;
 }
 
-.mango {
-  color: #f9c74f;
-}
-
-.strawberry {
-  color: #f94144;
-}
-
-.lychee {
-  color: #90be6d;
-}
-
-.thai {
-  color: #f3722c;
-}
-
-.home {
-  color:black
-}
-
-.home-boba {
-  color:white
-}
-
 .sun-image {
   margin-top: 20px;
   max-width: 100px;
@@ -184,15 +107,161 @@ footer a:hover {
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
+
 @media (max-width: 500px) {
   .background-welcome {
     background: linear-gradient(to bottom right, #b3ffb2, #72ffe5);
   }
 }
+
+.shop-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: antiquewhite;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.menu-grid-boba {
+  display: grid;
+  grid-template-areas:
+    "mango mango strawberry"
+    "lychee thai strawberry";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.mango-item { grid-area: mango; }
+.strawberry-item { grid-area: strawberry; }
+.lychee-item { grid-area: lychee; }
+.thai-item { grid-area: thai; }
+
+.menu-grid-ice {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.item {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+.item h2 {
+  margin: 15px 0 5px;
+  font-size: 1.5rem;
+}
+
+.item p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+  margin-bottom: 10px;
+}
+
+.horizontal {
+  flex-direction: row;
+  height: 200px;
+}
+
+.horizontal img {
+  width: 45%;
+  height: 100%;
+  border-radius: 12px 0 0 12px;
+}
+
+.horizontal .info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 55%;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .menu-grid-boba {
+    grid-template-areas:
+      "mango"
+      "strawberry"
+      "lychee"
+      "thai";
+    grid-template-columns: 1fr;
+  }
+
+  .horizontal {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .horizontal img {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .horizontal .info {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.home, .home-boba {
+  color: white;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.mango { color: #f9c74f; }
+.strawberry { color: #f94144; }
+.lychee { color: #90be6d; }
+.thai { color: #f3722c; }
+.vanilla { color: #f9f3ec; }
+.mint-chip { color: #57cc99; }
+.chocolate-chip { color: #6d4c41; }
+.strawberry-ice { color: #f28482; }
