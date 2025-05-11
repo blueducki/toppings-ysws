@@ -265,3 +265,12 @@ footer a:hover {
 .mint-chip { color: #57cc99; }
 .chocolate-chip { color: #6d4c41; }
 .strawberry-ice { color: #f28482; }
+
+.fixed-sticker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: auto;
+  z-index: 1000;
+}
